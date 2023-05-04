@@ -1,0 +1,72 @@
+<%- include('header')%>
+ 
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+          
+         
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Basic form elements</h4>
+                    <p class="card-description"> Basic form elements </p>
+                    <form action="/admin/addMovieShowinsert" method="post" class="forms-sample">
+                      <div class="form-group">
+                        <label class="form-label" for="basic-default-fullname">Select Movie</label>
+                          <select name="movieID" id="movieID" onchange="mallfindinMovie()" class="form-select">
+                            <option value="">--Select Movie--</option>
+                            <%for(let dataa of data){%>
+                                <option value="<%= dataa.id%>"><%= dataa.moviename%></option>
+                                <%}%>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" for="basic-default-fullname">Select Mall</label>
+                        <select name="mallID" id="mallID" class="form-select">
+                            <option value="">--Select Mall--</option>
+                            
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" for="basic-default-company">Time</label>
+                        <input type="time" class="" id="basic-default-company" name="time" />
+                    </div>    
+                  
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+          <script>
+            function mallfindinMovie(){
+                $.ajax({
+                    url: '/admin/moviedetailonshow',
+                    type: 'post',
+                    data: {
+                        movieId: document.getElementById('movieID').value
+                    },
+                    success: (res) => {
+                        document.getElementById('mallID').innerHTML = res;
+                    }
+                })
+            }
+          </script>
+   
+          <%- include('footer')%>

@@ -1,0 +1,67 @@
+<%- include('header')%>
+ 
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+          
+         
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Basic form elements</h4>
+                    <p class="card-description"> Basic form elements </p>
+                    <form action="/admin/addmoviee" method="post" enctype="multipart/form-data" class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Movie Name</label>
+                        <input type="text"name='moviename' class="form-control" id="exampleInputName1" placeholder="moviename">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Movie Price</label>
+                        <input type="text"name='movieprice' class="form-control" id="exampleInputName1" placeholder="moviename">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Movie Launge</label>
+                        <input type="text"name='launge' class="form-control" id="exampleInputEmail3" placeholder="launge">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Movie type</label>
+                        <input type="text"name='movietype' class="form-control" id="exampleInputPassword4" placeholder="type">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Run Time</label>
+                        <input type="text"name='runtime' class="form-control" id="exampleInputPassword4" placeholder="runtime">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">screen type</label>
+                        <input type="text"name='screen' class="form-control" id="exampleInputPassword4" placeholder="screen">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Banner</label>
+                        <input type="file"name='banner' class="form-control" id="exampleInputPassword4" placeholder="banner">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Poster</label>
+                        <input type="file"name='poster' class="form-control" id="exampleInputPassword4" placeholder="poster">
+                      </div>                 
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+   
+          <%- include('footer')%>
